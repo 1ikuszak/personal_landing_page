@@ -1,9 +1,26 @@
 import Card from '@/components/Card';
 import Container from '@/components/Container';
+import PortfolioCard from '@/components/PortfolioCard';
+import ValueCard from '@/components/ValueCard';
 import { Button } from '@/components/ui/Button';
 import hero from '@/public/hero.jpg';
 import Image from 'next/image';
+import ProcesBlock from '../components/ProcesBlock';
+
 export default async function Home() {
+  const PortfolioCards = [];
+
+  for (let index = 0; index < 9; index++) {
+    PortfolioCards.push(
+      <PortfolioCard
+        tag_1={`tag-1-${index}`}
+        tag_2={`tag-2-${index}`}
+        tag_3={`tag-3-${index}`}
+        image={hero}
+        key={index}
+      />
+    );
+  }
   return (
     <>
       <div className="my-12 flex flex-col gap-[120px]">
@@ -45,7 +62,7 @@ export default async function Home() {
 
         <section className="flex items-center justify-center h-auto py-12 bg-black">
           <Container>
-            <div className="flex flex-col lg:flex-row flex gap-[80px]">
+            <div className="flex flex-col lg:flex-row flex gap-[80px] items-center">
               <div className="flex flex-col order-last gap-10 lg:order-first">
                 <div className="text-white">
                   <p className="text-3xl font-bold">Satysfakcja klienta</p>
@@ -90,6 +107,73 @@ export default async function Home() {
             </div>
           </Container>
         </section>
+
+        <Container>
+          <section className="flex flex-col items-center justify-center gap-10">
+            <p className="text-5xl font-semibold">Jak mogę Ci pomóc</p>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 lg:flex-row">
+                <ValueCard
+                  title="Większe zasięgi i widoczności online"
+                  description="Zopytmalizuję SEO, aby Twoja strona internetowa była bardziej widoczna w wynikach wyszukiwania"
+                />
+                <ValueCard
+                  title="Zwiększona sprzedaż"
+                  description="Stworzę stronę, która zachęci klientów do podjęcia pożądanej akcji, takiej jak zakup lub zapisanie się na listę mailingową"
+                />
+              </div>
+              <div className="flex flex-col gap-6 lg:flex-row">
+                <ValueCard
+                  title="Przyjemne doświadczenia użytkowników"
+                  description="Zapewnię łatwą nawigację, szybkie ładowanie i pozytywne wrażenia użytkowników, aby zachęcić ich do ponownego odwiedzenia"
+                />
+                <ValueCard
+                  title="Zbuduję zaufanie Twoich klientów"
+                  description="Wykorzystam certyfikaty bezpieczeństwa i recenzje klientów, aby zbudować zaufanie "
+                />
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <Button variant="default">zarezerwuj rozmowę</Button>
+              <Button variant="subtle">portfolio</Button>
+            </div>
+          </section>
+        </Container>
+
+        <Container>
+          <section className="flex flex-col gap-0">
+            <div className="text-center">
+              <p className="mb-3 text-6xl font-semibold">
+                Projekty, które zbudowałem
+              </p>
+              <p>
+                to tylko niektóre z projektów, zarezerwuj rozmowę <br /> i
+                zajmij miejsce dla siebie
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-6 pt-12 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+              {PortfolioCards}
+            </div>
+            <div className="flex justify-center gap-3 mt-10">
+              <Button variant="default">zarezerwuj rozmowę</Button>
+              <Button variant="subtle">przebieg procesu</Button>
+            </div>
+          </section>
+        </Container>
+
+        <Container>
+          <section className="flex flex-col gap-6">
+            <div className="text-center">
+              <p className="mb-3 text-6xl font-semibold">Proces</p>
+            </div>
+            <div className="flex">
+              <div className="w-1/2">
+                <ProcesBlock />
+              </div>
+              <div className="w-1/2"></div>
+            </div>
+          </section>
+        </Container>
       </div>
     </>
   );
