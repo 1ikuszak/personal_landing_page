@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import * as React from 'react';
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/Icons';
 import { MobileNav } from '@/components/mobile-nav';
 import { cn } from '@/lib/utils';
 import { MainNavItem } from '@/types';
