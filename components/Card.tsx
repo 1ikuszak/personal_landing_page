@@ -1,33 +1,32 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
 interface CardProps {
-  image: StaticImageData;
+  image: React.ReactNode;
   title: string;
-  pill?: string;
   description: string;
   bar1: string;
   bar2: string;
+  color: string;
 }
 
 const Card: FC<CardProps> = ({
   title,
   image,
-  pill,
   bar1,
   bar2,
+  color,
   description,
 }) => {
   return (
     <div className="max-w-xs p-2 bg-white rounded-xl min-w-[320px] ">
       <div className="flex flex-col gap-2">
-        <Image
-          className="object-cover w-full rounded-md aspect-video"
-          src={image}
-          alt={`${image}`}
-        />
+        <div
+          className={`rounded-xl flex items-center justify-center p-6 bg-blue-500 ${color}`}
+        >
+          {image}
+        </div>
         <div className="flex flex-col gap-6 px-4 pt-4 pb-8 border border-black rounded-md">
           <div>
             <p className="text-4xl font-semibold">{title}</p>

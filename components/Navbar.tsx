@@ -35,7 +35,7 @@ const Navbar = ({ items, children }: MainNavProps) => {
       >
         <Icons.logo size={36} />
         <p className="text-xl font-bold text-neutral-900">
-          <span className="text-blue-500">Luke</span>
+          <span className="text-blue-500">LKG</span>
           <span>Design</span>
         </p>
       </Link>
