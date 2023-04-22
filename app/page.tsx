@@ -1,11 +1,13 @@
 import Card from '@/components/Card';
 import Container from '@/components/Container';
+import Form from '@/components/Form';
+import Footer from '@/components/Fotter';
 import { Icons } from '@/components/Icons';
-import LastChanceCard from '@/components/LastChanceCard';
 import PortfolioCard from '@/components/PortfolioCard';
 import ProcesCard from '@/components/ProcesCard';
 import ValueCard from '@/components/ValueCard';
 import { Button } from '@/components/ui/Button';
+import { marketingConfig } from '@/config/marketing';
 import hero from '@/public/hero.jpg';
 import ProcesBlock from '../components/ProcesBlock';
 
@@ -94,7 +96,7 @@ export default async function Home() {
                   description="skupiamy się nie tylko na wyglądzie strony, ale również na tym, jak działa oraz jak zdobyć zaufanie klientów"
                   bar1="KREATYWNOŚĆ"
                   bar2="FUNKCJONALNOŚĆ"
-                  color="bg-blue-400"
+                  color="bg-white"
                   image={<Icons.paintbrush size={100} />}
                 />
                 <Card
@@ -102,7 +104,7 @@ export default async function Home() {
                   description="Moje usługi Copywritingu pomagają przekształcić odwiedzających Twoją stronę w lojalnych klientów"
                   bar1="PRZEKAZ"
                   bar2="SKUTECZNOŚĆ"
-                  color="bg-fuchsia-400"
+                  color="bg-white"
                   image={<Icons.clipboard size={100} />}
                 />
               </div>
@@ -209,13 +211,24 @@ export default async function Home() {
           </section>
         </Container>
 
-        <Container>
+        {/* <Container>
           <section>
             <LastChanceCard />
           </section>
+        </Container> */}
+
+        <Container>
+          <section className="flex flex-col items-center justify-center gap-10">
+            <p className="text-6xl font-semibold">Zacznijmy współprace</p>
+            <Form />
+          </section>
         </Container>
 
-        <section className="w-full h-[420px] bg-black"></section>
+        <section className="w-full bg-black">
+          <Container>
+            <Footer items={marketingConfig.mainNav} />
+          </Container>
+        </section>
       </div>
     </>
   );

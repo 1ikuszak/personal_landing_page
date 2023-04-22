@@ -14,6 +14,7 @@ import {
   SunMedium,
   Target,
   User,
+  Webhook,
   X,
   type Icon as LucideIcon,
 } from 'lucide-react';
@@ -37,6 +38,7 @@ export const Icons = {
   coins: Coins,
   user: User,
   handshake: HeartHandshake,
+  webhook: Webhook,
 };
 
 export type Icons = keyof typeof Icons;

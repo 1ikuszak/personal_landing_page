@@ -23,7 +23,7 @@ const Card: FC<CardProps> = ({
     <div className="max-w-xs p-2 bg-white rounded-xl min-w-[320px] ">
       <div className="flex flex-col gap-2">
         <div
-          className={`rounded-xl flex items-center justify-center p-6 bg-blue-500 ${color}`}
+          className={`rounded-xl flex items-center justify-center p-6 border border-black ${color}`}
         >
           {image}
         </div>
