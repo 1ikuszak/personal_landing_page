@@ -24,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html
       lang="en"
       className={cn('font-sans text-slate-900 antialiased', fontSans.variable)}
+      style={{ scrollBehavior: 'smooth' }}
     >
       <head />
       <body className="min-h-screen">

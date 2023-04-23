@@ -1,8 +1,10 @@
 'use client';
+import '@/styles/globals.css';
 
-import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import * as React from 'react';
+
+import { Link } from 'react-scroll';
 
 import { Icons } from '@/components/Icons';
 import { MobileNav } from '@/components/mobile-nav';
@@ -30,8 +32,12 @@ const Navbar = ({ items, children }: MainNavProps) => {
         <MobileNav items={items}>{children}</MobileNav>
       )}
       <Link
-        href="/"
+        to="/"
         className="flex items-center justify-center w-full space-x-2 md:w-auto md:justify-start"
+        spy={true}
+        smooth={true}
+        offset={50}
+        duration={500}
       >
         <Icons.logo size={36} />
         <p className="text-xl font-bold text-neutral-900">
@@ -44,12 +50,16 @@ const Navbar = ({ items, children }: MainNavProps) => {
           {items?.map((item, index) => (
             <Link
               key={index}
-              href={item.disabled ? '#' : item.href}
+              to={item.disabled ? '#' : item.href}
               className={cn(
-                'flex items-center text-lg font-semibold text-slate-600 sm:text-base hover:text-slate-700',
+                'flex items-center text-lg font-semibold text-slate-600 sm:text-base hover:text-slate-700 cursor-pointer',
                 item.href.startsWith(`/${segment}`) && 'text-slate-900',
                 item.disabled && 'opacity-60'
               )}
+              spy={true}
+              smooth={true}
+              offset={-64}
+              duration={500}
             >
               {item.title}
             </Link>

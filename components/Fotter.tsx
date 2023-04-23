@@ -2,9 +2,9 @@
 
 import { cn } from '@/lib/utils';
 import { MainNavItem } from '@/types';
-import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import * as React from 'react';
+import { Link } from 'react-scroll';
 import { Icons } from './Icons';
 
 interface MainNavProps {
@@ -15,24 +15,28 @@ interface MainNavProps {
 const Footer = ({ items }: MainNavProps) => {
   const segment = useSelectedLayoutSegment();
   return (
-    <footer className="flex flex-col gap-12 p-12 text-white">
-      <div className="flex justify-between">
+    <footer className="flex flex-col gap-12 p-12 text-light">
+      <div className="flex items-center justify-center lg:justify-between">
         <div className="flex items-center justify-center gap-2">
           <Icons.logo />
           <p className="text-2xl">FireflyDesign</p>
         </div>
-        <div className="flex gap-2">
+        <div className="hidden gap-2 lg:flex">
           {items?.length ? (
             <nav className="hidden gap-6 md:flex">
               {items?.map((item, index) => (
                 <Link
                   key={index}
-                  href={item.disabled ? '#' : item.href}
+                  to={item.disabled ? '#' : item.href}
                   className={cn(
-                    'flex items-center text-lg font-semibold sm:text-base',
+                    'flex items-center text-lg font-semibold sm:text-base cursor-pointer',
                     item.href.startsWith(`/${segment}`) && 'text-slate-900',
                     item.disabled && 'opacity-60'
                   )}
+                  spy={true}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}
                 >
                   {item.title}
                 </Link>

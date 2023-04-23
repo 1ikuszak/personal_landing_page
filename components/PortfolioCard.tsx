@@ -18,7 +18,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({
 }) => {
   return (
     <>
-      <div className="flex items-center justify-center p-3 border border-black rounded-xl">
+      <div className="flex items-center justify-center p-3 border border-dark rounded-xl">
         <div className="flex flex-col gap-3">
           <Image
             src={image}
@@ -26,13 +26,13 @@ const PortfolioCard: FC<PortfolioCardProps> = ({
             className="transition duration-300 ease-in-out rounded-xl hover:scale-[1.03] hover:opacity-90"
           />
           <div className="flex justify-between gap-2">
-            <div className="flex justify-center flex-1 border border-black rounded-full align-center">
+            <div className="flex justify-center flex-1 border border-dark rounded-full align-center">
               <p className="text-sm font-semibold">{tag_1}</p>
             </div>
-            <div className="flex justify-center flex-1 border border-black rounded-full align-center">
+            <div className="flex justify-center flex-1 border border-dark rounded-full align-center">
               <p className="text-sm font-semibold">{tag_2}</p>
             </div>
-            <div className="flex justify-center flex-1 border border-black rounded-full align-center">
+            <div className="flex justify-center flex-1 border border-dark rounded-full align-center">
               <p className="text-sm font-semibold">{tag_3}</p>
             </div>
           </div>

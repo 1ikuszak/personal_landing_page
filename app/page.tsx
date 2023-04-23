@@ -9,6 +9,7 @@ import ValueCard from '@/components/ValueCard';
 import { Button } from '@/components/ui/Button';
 import { marketingConfig } from '@/config/marketing';
 import hero from '@/public/hero.jpg';
+import '@/styles/globals.css';
 import ProcesBlock from '../components/ProcesBlock';
 
 export default async function Home() {
@@ -26,6 +27,7 @@ export default async function Home() {
       />
     );
   }
+
   return (
     <>
       <div className="mt-[120px] flex flex-col gap-[260px]">
@@ -33,7 +35,7 @@ export default async function Home() {
           <section className="flex gap-[120px]">
             <div className="flex flex-col gap-7">
               <div>
-                <p className="text-5xl font-semibold md:text-6xl whitespace-nowrap">
+                <p className="text-5xl font-semibold md:text-6xl lightspace-nowrap">
                   Strony, które <br />
                   opowiadają historię <br /> i przynoszą
                   <span className="text-blue-500"> rezultaty</span>
@@ -64,18 +66,21 @@ export default async function Home() {
           </section>
         </Container>
 
-        <section className="flex items-center justify-center h-auto py-12 bg-black">
+        <section
+          className="flex items-center justify-center h-auto py-12 bg-dark"
+          id="firefly"
+        >
           <Container>
-            <div className="flex flex-col lg:flex-row flex gap-[80px] items-center">
+            <div className="flex flex-col lg:flex-row py-12 flex gap-[80px] items-center">
               <div className="flex flex-col order-last gap-12 lg:order-first">
-                <div className="text-white">
+                <div className="text-light">
                   <p className="text-3xl font-bold">Satysfakcja klienta</p>
                   <p className="text-lg">
                     moim priorytetem jest zadowolenie klienta, <br /> dlatego
                     zawsze dążę do osiągnięcia <br /> jak najlepszych wyników.
                   </p>
                 </div>
-                <div className="text-white">
+                <div className="text-light">
                   <p className="text-3xl font-bold">Indywidualne podejście</p>
                   <p className="text-lg">
                     projektuję i piszę treści pod konkretne potrzeby <br /> i
@@ -88,7 +93,7 @@ export default async function Home() {
                 </div>
               </div>
 
-              <div className="hidden w-[1px] bg-white rounded-full h-f lg:flex"></div>
+              <div className="hidden w-[1px] bg-light rounded-full h-f lg:flex"></div>
 
               <div className="flex flex-col items-center justify-center order-first gap-12 lg:order-last lg:flex-row">
                 <Card
@@ -96,7 +101,7 @@ export default async function Home() {
                   description="skupiamy się nie tylko na wyglądzie strony, ale również na tym, jak działa oraz jak zdobyć zaufanie klientów"
                   bar1="KREATYWNOŚĆ"
                   bar2="FUNKCJONALNOŚĆ"
-                  color="bg-white"
+                  color="bg-light"
                   image={<Icons.paintbrush size={100} />}
                 />
                 <Card
@@ -104,7 +109,7 @@ export default async function Home() {
                   description="Moje usługi Copywritingu pomagają przekształcić odwiedzających Twoją stronę w lojalnych klientów"
                   bar1="PRZEKAZ"
                   bar2="SKUTECZNOŚĆ"
-                  color="bg-white"
+                  color="bg-light"
                   image={<Icons.clipboard size={100} />}
                 />
               </div>
@@ -112,7 +117,7 @@ export default async function Home() {
           </Container>
         </section>
 
-        <Container>
+        <Container id="values">
           <section className="flex flex-col items-center justify-center gap-12">
             <p className="text-5xl font-semibold">Jak mogę Ci pomóc</p>
             <div className="flex flex-col gap-6">
@@ -149,7 +154,7 @@ export default async function Home() {
         </Container>
 
         <Container>
-          <section className="flex flex-col gap-0">
+          <section className="flex flex-col gap-0" id="portfolio">
             <div className="text-center">
               <p className="mb-3 text-6xl font-semibold">
                 Projekty, które zbudowałem
@@ -170,7 +175,7 @@ export default async function Home() {
         </Container>
 
         <Container>
-          <section className="flex flex-col gap-12">
+          <section className="flex flex-col gap-12" id="process">
             <div className="text-center">
               <p className="mb-3 text-6xl font-semibold">Proces</p>
             </div>
@@ -218,13 +223,16 @@ export default async function Home() {
         </Container> */}
 
         <Container>
-          <section className="flex flex-col items-center justify-center gap-10">
+          <section
+            className="flex flex-col items-center justify-center gap-10"
+            id="contact"
+          >
             <p className="text-6xl font-semibold">Zacznijmy współprace</p>
             <Form />
           </section>
         </Container>
 
-        <section className="w-full bg-black">
+        <section className="w-full bg-dark">
           <Container>
             <Footer items={marketingConfig.mainNav} />
           </Container>

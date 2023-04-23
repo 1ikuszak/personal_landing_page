@@ -1,10 +1,10 @@
 'use client';
 
-interface ContainerProps {
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({ children }) => {
+const Container: React.FC<ContainerProps> = ({ children, ...props }) => {
   return (
     <div
       className="
@@ -15,6 +15,7 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
         sm:px-2
         px-4
       "
+      {...props}
     >
       {children}
     </div>

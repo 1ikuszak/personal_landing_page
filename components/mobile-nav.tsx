@@ -1,6 +1,6 @@
 import { useLockBody } from '@/hooks/use-lock-body';
-import Link from 'next/link';
 import * as React from 'react';
+import { Link } from 'react-scroll';
 
 import { cn } from '@/lib/utils';
 import { MainNavItem } from '@/types';
@@ -19,16 +19,20 @@ export function MobileNav({ items, children }: MobileNavProps) {
         'fixed inset-0 top-12 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md animate-in slide-in-from-bottom-80 md:hidden'
       )}
     >
-      <div className="relative z-20 grid gap-6 p-4 bg-white rounded-md shadow-md">
+      <div className="relative z-20 grid gap-6 p-4 rounded-md shadow-md bg-light">
         <nav className="grid grid-flow-row text-sm auto-rows-max">
           {items.map((item, index) => (
             <Link
               key={index}
-              href={item.disabled ? '#' : item.href}
+              to={item.disabled ? '#' : item.href}
               className={cn(
-                'flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline',
+                'flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline cursor-pointer',
                 item.disabled && 'cursor-not-allowed opacity-60'
               )}
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
             >
               {item.title}
             </Link>
