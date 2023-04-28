@@ -1,8 +1,36 @@
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 import { Button } from './ui/Button';
 
-const Form = () => {
+export const ContactUs = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
-    <form className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="grid w-full grid-cols-1 gap-3 lg:w-1/2 sm:grid-cols-2"
+    >
       <div>
         <label
           htmlFor="name"
@@ -85,10 +113,12 @@ const Form = () => {
         </div>
       </div>
       <div className="text-right sm:col-span-2">
-        <Button>wyślij</Button>
+        <Button type="submit" value="send">
+          wyślij
+        </Button>
       </div>
     </form>
   );
 };
 
-export default Form;
+export default ContactUs;

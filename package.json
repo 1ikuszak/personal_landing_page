@@ -9,26 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@react-three/drei": "^9.65.5",
+    "@react-three/fiber": "^8.12.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
+    "@types/three": "^0.150.2",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.5.2",
     "clsx": "^1.2.1",
     "cn": "^0.1.1",
     "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
+    "eslint-config-next": "13.2.4",
     "lucide-react": "^0.166.0",
-    "next": "13.3.0",
+    "next": "13.2.4",
     "postcss": "8.4.23",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-scroll": "^1.8.9",
+    "react-transition-group": "^4.4.5",
     "tailwind-merge": "^1.12.0",
     "tailwindcss": "3.3.1",
+    "three": "^0.151.3",
+    "tunnel-rat": "^0.1.2",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/react-scroll": "^1.8.6"
+    "@types/react-scroll": "^1.8.6",
+    "@types/react-transition-group": "^4.4.5"
   }
 }

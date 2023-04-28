@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
-import Link from 'next/link';
 import * as React from 'react';
+import { Link } from 'react-scroll';
+import { Icons } from '../Icons';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none  data-[state=open]:bg-slate-100',
+  'inline-flex items-center justify-center cursor-pointer	gap-1 rounded-xl text-sm font-medium transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none  data-[state=open]:bg-slate-100',
   {
     variants: {
       variant: {
@@ -29,35 +30,48 @@ const buttonVariants = cva(
   }
 );
 
-export interface ButtonProps
+interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   href?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, children, href, size, ...props }, ref) => {
-    if (href) {
+  (props, ref) => {
+    const { className, variant, children, href, size, ...rest } = props;
+
+    if (href && variant === 'subtle') {
       return (
         <Link
-          href={href}
-          className={cn(buttonVariants({ variant, size, className }))}
+          to={href}
+          spy={true}
+          smooth={true}
+          offset={-64}
+          duration={400}
+          className={cn(buttonVariants({ variant: 'subtle', size, className }))}
         >
+          {children}
+          <Icons.downarrow size={14} />
+        </Link>
+      );
+    }
+
+    const buttonClassNames = cn(buttonVariants({ variant, size, className }));
+
+    if (href) {
+      return (
+        <Link to={href} className={buttonClassNames}>
           {children}
         </Link>
       );
     }
+
     return (
-      <button
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      >
+      <button className={buttonClassNames} ref={ref} {...rest}>
         {children}
       </button>
     );
   }
 );
-Button.displayName = 'Button';
 
 export { Button, buttonVariants };

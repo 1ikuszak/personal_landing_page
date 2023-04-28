@@ -1,4 +1,3 @@
-import Container from '@/components/Container';
 import Navbar from '@/components/Navbar';
 import { marketingConfig } from '@/config/marketing';
 import { cn } from '@/lib/utils';
@@ -27,12 +26,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       style={{ scrollBehavior: 'smooth' }}
     >
       <head />
-      <body className="min-h-screen">
-        <Container>
-          <div className="py-2 m-auto">
-            <Navbar items={marketingConfig.mainNav} />
-          </div>
-        </Container>
+      <body className="min-h-screen" id="hero">
+        <Navbar items={marketingConfig.mainNav} />
         <main>{children}</main>
       </body>
     </html>

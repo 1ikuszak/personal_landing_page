@@ -1,4 +1,5 @@
 import {
+  ChevronDown,
   ClipboardType,
   Clock4,
   Coins,
@@ -8,6 +9,8 @@ import {
   HeartHandshake,
   Hexagon,
   Image,
+  Loader,
+  Loader2,
   Menu,
   Paintbrush,
   Send,
@@ -39,6 +42,9 @@ export const Icons = {
   user: User,
   handshake: HeartHandshake,
   webhook: Webhook,
+  downarrow: ChevronDown,
+  loader: Loader,
+  loader2: Loader2,
 };
 
 export type Icons = keyof typeof Icons;

@@ -17,10 +17,17 @@ const Footer = ({ items }: MainNavProps) => {
   return (
     <footer className="flex flex-col gap-12 p-12 text-light">
       <div className="flex items-center justify-center lg:justify-between">
-        <div className="flex items-center justify-center gap-2">
+        <Link
+          to="hero"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={400}
+          className="flex items-center justify-center gap-2 cursor-pointer"
+        >
           <Icons.logo />
           <p className="text-2xl">FireflyDesign</p>
-        </div>
+        </Link>
         <div className="hidden gap-2 lg:flex">
           {items?.length ? (
             <nav className="hidden gap-6 md:flex">
@@ -35,7 +42,6 @@ const Footer = ({ items }: MainNavProps) => {
                   )}
                   spy={true}
                   smooth={true}
-                  offset={-50}
                   duration={500}
                 >
                   {item.title}

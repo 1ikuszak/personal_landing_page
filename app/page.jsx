@@ -1,6 +1,8 @@
+'use client';
+
 import Card from '@/components/Card';
 import Container from '@/components/Container';
-import Form from '@/components/Form';
+import ContactUs from '@/components/Form';
 import Footer from '@/components/Fotter';
 import { Icons } from '@/components/Icons';
 import PortfolioCard from '@/components/PortfolioCard';
@@ -12,7 +14,37 @@ import hero from '@/public/hero.jpg';
 import '@/styles/globals.css';
 import ProcesBlock from '../components/ProcesBlock';
 
-export default async function Home() {
+import { Suspense } from 'react';
+
+import { Layout } from '@/components/dom/Layout';
+import dynamic from 'next/dynamic';
+
+const Blob = dynamic(
+  () => import('@/components/canvas/Examples').then((mod) => mod.Blob),
+  { ssr: false }
+);
+
+const View = dynamic(
+  () => import('@/components/canvas/View').then((mod) => mod.View),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center w-full gap-2 h-96">
+        <Icons.loader2
+          size={16}
+          className="text-black lg:text-white animate-spin "
+        />
+        <p className="lg:text-white">processing...</p>
+      </div>
+    ),
+  }
+);
+const Common = dynamic(
+  () => import('@/components/canvas/View').then((mod) => mod.Common),
+  { ssr: false }
+);
+
+export default function Home() {
   const icon_size = 30;
   const PortfolioCards = [];
 
@@ -30,41 +62,40 @@ export default async function Home() {
 
   return (
     <>
-      <div className="mt-[120px] flex flex-col gap-[260px]">
+      <div className="mt-[40px] lg:mt-[140px] flex flex-col gap-[200px] lg:gap-[240px]">
         <Container>
-          <section className="flex gap-[120px]">
-            <div className="flex flex-col gap-7">
-              <div>
-                <p className="text-5xl font-semibold md:text-6xl lightspace-nowrap">
-                  Strony, które <br />
-                  opowiadają historię <br /> i przynoszą
-                  <span className="text-blue-500"> rezultaty</span>
-                </p>
-              </div>
-              <div>
-                <p className="text-neutral-400">
-                  Projektuję strony internetowe, które nie tylko wyglądają{' '}
-                  <br />
-                  atrakcyjnie, ale przede wszystkim są skutecznymi narzędziami{' '}
-                  <br />
-                  biznesowymi, zwiększającymi sprzedaż i lojalność klientów.
-                </p>
-              </div>
+          <div className="flex flex-col flex-wrap items-center justify-center w-full mx-auto md:flex-row">
+            <div className="mix-blend-luminosity z-10 flex flex-col lg:gap-6 gap-8 gap-6 items-start justify-center w-full text-center md:w-[50%] md:text-left">
+              <p className="text-6xl font-semibold text-left md:text-6xl">
+                Strony, które opowiadają historię i przynoszą
+                <span className="text-blue-500"> rezultaty</span>
+              </p>
+              <p className="text-xl text-left break-words lg:text-base text-neutral-400">
+                Projektuję strony internetowe, które nie tylko wyglądają
+                atrakcyjnie, ale przede wszystkim są skutecznymi narzędziami
+                biznesowymi, zwiększającymi sprzedaż i lojalność klientów.
+              </p>
               <div className="flex gap-3">
                 <Button variant="default">zarezerwuj rozmowę</Button>
-                <Button variant="subtle">dowiedz się więcej</Button>
+                <Button variant="subtle" href="firefly">
+                  dowiedz się więcej
+                </Button>
               </div>
             </div>
-            <div className="items-center justify-center hidden lg:flex">
-              {/* <Image
-                  src={hero}
-                  alt="hero"
-                  className="object-cover w-full h-auto rounded-xl aspect-video"
-                /> */}
-              <Icons.logo size={320} />
+
+            <div className="absolute z-[-1] w-full text-center rounded-lg md:relative lg:bg-dark md:w-[50%]">
+              <Layout>
+                <View className="flex flex-col items-center justify-center w-full h-96">
+                  <Suspense fallback={null}>
+                    <Blob scale={1} position={[0, 0, 0]} />
+                    <Common />
+                  </Suspense>
+                </View>
+              </Layout>
             </div>
-          </section>
+          </div>
         </Container>
+        {/* jumbo */}
 
         <section
           className="flex items-center justify-center h-auto py-12 bg-dark"
@@ -89,7 +120,9 @@ export default async function Home() {
                 </div>
                 <div className="flex gap-3">
                   <Button variant="default">zarezerwuj rozmowę</Button>
-                  <Button variant="subtle">jak mogę ci pomóc</Button>
+                  <Button variant="subtle" href="values">
+                    jak mogę ci pomóc
+                  </Button>
                 </div>
               </div>
 
@@ -142,13 +175,15 @@ export default async function Home() {
                 <ValueCard
                   icon={<Icons.handshake size={icon_size} />}
                   title="Zbuduję zaufanie Twoich klientów"
-                  description="Wykorzystam certyfikaty bezpieczeństwa i recenzje klientów, aby zbudować zaufanie "
+                  description="Wykorzystam certyfikaty bezpieczeństwa i recenzje, aby zbudować zaufanie wśród klientów"
                 />
               </div>
             </div>
             <div className="flex gap-3">
               <Button variant="default">zarezerwuj rozmowę</Button>
-              <Button variant="subtle">portfolio</Button>
+              <Button variant="subtle" href="portfolio">
+                portfolio
+              </Button>
             </div>
           </section>
         </Container>
@@ -156,7 +191,7 @@ export default async function Home() {
         <Container>
           <section className="flex flex-col gap-0" id="portfolio">
             <div className="text-center">
-              <p className="mb-3 text-6xl font-semibold">
+              <p className="mb-3 text-5xl font-semibold">
                 Projekty, które zbudowałem
               </p>
               <p>
@@ -169,7 +204,9 @@ export default async function Home() {
             </div>
             <div className="flex justify-center gap-3 mt-10">
               <Button variant="default">zarezerwuj rozmowę</Button>
-              <Button variant="subtle">przebieg procesu</Button>
+              <Button variant="subtle" href="process">
+                przebieg procesu
+              </Button>
             </div>
           </section>
         </Container>
@@ -177,7 +214,7 @@ export default async function Home() {
         <Container>
           <section className="flex flex-col gap-12" id="process">
             <div className="text-center">
-              <p className="mb-3 text-6xl font-semibold">Proces</p>
+              <p className="mb-3 text-5xl font-semibold">Proces</p>
             </div>
             <div className="lg:flex lg:gap-[164px]">
               <div className="mb-12 lg:mb-0 lg:w-1/2">
@@ -193,7 +230,7 @@ export default async function Home() {
                 />
                 <ProcesCard
                   title="Tworzenie szkiców"
-                  description="Tworzenie szkiców to sposób na zaplanowanie struktury i układu Twojej strony."
+                  description="Tworzenie szkiców to sposób na zaplanowanie najlpeszej struktury i układu Twojej strony."
                   pill="2-5"
                 />
                 <ProcesCard
@@ -227,12 +264,14 @@ export default async function Home() {
             className="flex flex-col items-center justify-center gap-10"
             id="contact"
           >
-            <p className="text-6xl font-semibold">Zacznijmy współprace</p>
-            <Form />
+            <p className="text-5xl font-semibold text-center">
+              Zacznijmy współprace
+            </p>
+            <ContactUs />
           </section>
         </Container>
 
-        <section className="w-full bg-dark">
+        <section className="w-full bg-dark" id="footer">
           <Container>
             <Footer items={marketingConfig.mainNav} />
           </Container>
