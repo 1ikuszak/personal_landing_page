@@ -1,42 +1,32 @@
-'use client';
-
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
 interface PortfolioCardProps {
-  tag_1: string | '';
-  tag_2: string | '';
-  tag_3: string | '';
+  link?: string;
   image: StaticImageData;
 }
 
-const PortfolioCard: FC<PortfolioCardProps> = ({
-  tag_1,
-  tag_2,
-  tag_3,
-  image,
-}) => {
+const PortfolioCard: FC<PortfolioCardProps> = ({ image, link }) => {
   return (
     <>
-      <div className="flex items-center justify-center p-3 border border-dark rounded-xl">
+      <div className="flex items-center justify-center p-2 border border-light rounded-xl">
         <div className="flex flex-col gap-3">
           <div className="overflow-hidden rounded-xl">
-            <Image
-              src={image}
-              alt="project img"
-              className="transition duration-500 ease-in-out rounded-xl hover:scale-110 hover:opacity-90"
-            />
-          </div>
-          <div className="flex justify-between gap-2">
-            <div className="flex justify-center flex-1 border rounded-full border-dark align-center">
-              <p className="text-sm font-semibold">{tag_1}</p>
-            </div>
-            <div className="flex justify-center flex-1 border rounded-full border-dark align-center">
-              <p className="text-sm font-semibold">{tag_2}</p>
-            </div>
-            <div className="flex justify-center flex-1 border rounded-full border-dark align-center">
-              <p className="text-sm font-semibold">{tag_3}</p>
-            </div>
+            {link ? (
+              <a href={link}>
+                <Image
+                  src={image}
+                  alt="project img"
+                  className="w-full h-full transition duration-500 ease-in-out rounded-xl hover:scale-110 hover:opacity-90"
+                />
+              </a>
+            ) : (
+              <Image
+                src={image}
+                alt="project img"
+                className="w-full h-full transition duration-500 ease-in-out rounded-xl hover:scale-110 hover:opacity-90"
+              />
+            )}
           </div>
         </div>
       </div>

@@ -1,23 +1,33 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+import { Icons } from '@/components/Icons';
+import { marketingConfig } from '@/config/marketing';
+
 import Card from '@/components/Card';
 import Container from '@/components/Container';
 import ContactUs from '@/components/Form';
 import Footer from '@/components/Fotter';
-import { Icons } from '@/components/Icons';
 import PortfolioCard from '@/components/PortfolioCard';
 import ProcesCard from '@/components/ProcesCard';
 import ValueCard from '@/components/ValueCard';
+import { Layout } from '@/components/dom/Layout';
 import { Button } from '@/components/ui/Button';
-import { marketingConfig } from '@/config/marketing';
-import hero from '@/public/hero.jpg';
-import '@/styles/globals.css';
 import ProcesBlock from '../components/ProcesBlock';
 
-import { Suspense } from 'react';
+import CalendlyButton from '@/components/CalendlyButton';
 
-import { Layout } from '@/components/dom/Layout';
-import dynamic from 'next/dynamic';
+import crypto_hero from '@/public/crypto_hero.jpg';
+import crypto_perks from '@/public/crypto_perks.jpg';
+import engines_main from '@/public/engines_main.jpg';
+import fiver_browse from '@/public/fiver_browse.jpg';
+import fiver_login from '@/public/fiver_login.png';
+import fiver_register from '@/public/fiver_register.png';
+import outlanders_hero from '@/public/outlanders_hero.jpg';
+import rock_paper_scissors from '@/public/rock_paper_scissors.jpg';
+import snow_fox from '@/public/snow_fox.png';
 
 const Blob = dynamic(
   () => import('@/components/canvas/Examples').then((mod) => mod.Blob),
@@ -47,22 +57,35 @@ const Common = dynamic(
 export default function Home() {
   const icon_size = 30;
   const PortfolioCards = [];
+  const PortfolioLinks = ['https://1ikuszak.github.io/Rock-Paper-Scissors/'];
+  const PortfolioImages = [
+    rock_paper_scissors,
+    outlanders_hero,
+    fiver_browse,
+    fiver_login,
+    fiver_register,
+    crypto_hero,
+    crypto_perks,
+    engines_main,
+    snow_fox,
+  ];
 
-  for (let index = 0; index < 9; index++) {
+  for (let index = 0; index < PortfolioImages.length; index++) {
     PortfolioCards.push(
       <PortfolioCard
-        tag_1={`tag-1-${index}`}
-        tag_2={`tag-2-${index}`}
-        tag_3={`tag-3-${index}`}
-        image={hero}
+        link={PortfolioLinks.length > index ? PortfolioLinks[index] : undefined}
+        image={PortfolioImages[index]}
         key={index}
       />
     );
   }
 
   return (
-    <>
-      <div className="mt-[40px] lg:mt-[140px] flex flex-col gap-[200px] lg:gap-[240px]">
+    <div id="root">
+      <div
+        className="mt-[40px] lg:mt-[140px] flex flex-col gap-[200px] lg:gap-[240px]"
+        id="root"
+      >
         <Container>
           <div className="flex flex-col flex-wrap items-center justify-center w-full mx-auto md:flex-row">
             <div className="mix-blend-luminosity z-10 flex flex-col lg:gap-6 gap-8 gap-6 items-start justify-center w-full text-center md:w-[50%] md:text-left">
@@ -76,7 +99,9 @@ export default function Home() {
                 biznesowymi, zwiększającymi sprzedaż i lojalność klientów.
               </p>
               <div className="flex gap-3">
-                <Button variant="default">zarezerwuj rozmowę</Button>
+                <CalendlyButton variant="default">
+                  zarezerwuj darmową rozmowę
+                </CalendlyButton>
                 <Button variant="subtle" href="firefly">
                   dowiedz się więcej
                 </Button>
@@ -105,21 +130,23 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row py-12 flex gap-[80px] items-center">
               <div className="flex flex-col order-last gap-12 lg:order-first">
                 <div className="text-light">
-                  <p className="text-3xl font-bold">Satysfakcja klienta</p>
-                  <p className="text-lg">
+                  <p className="mb-1 text-3xl font-bold">Satysfakcja klienta</p>
+                  <p className="text-lg leading-tight ">
                     moim priorytetem jest zadowolenie klienta, <br /> dlatego
                     zawsze dążę do osiągnięcia <br /> jak najlepszych wyników.
                   </p>
                 </div>
                 <div className="text-light">
-                  <p className="text-3xl font-bold">Indywidualne podejście</p>
-                  <p className="text-lg">
+                  <p className="mb-1 text-3xl font-bold">
+                    Indywidualne podejście
+                  </p>
+                  <p className="text-lg leading-tight ">
                     projektuję i piszę treści pod konkretne potrzeby <br /> i
                     cele Twojego biznesu.
                   </p>
                 </div>
                 <div className="flex gap-3">
-                  <Button variant="default">zarezerwuj rozmowę</Button>
+                  <CalendlyButton>zarezerwuj termin</CalendlyButton>
                   <Button variant="subtle" href="values">
                     jak mogę ci pomóc
                   </Button>
@@ -170,7 +197,7 @@ export default function Home() {
                 <ValueCard
                   title="Lepsze doświadczenia użytkowników"
                   icon={<Icons.user size={icon_size} />}
-                  description="Zapewnię łatwą nawigację, szybkie ładowanie, aby zachęcić użytkowników ich do ponownego odwiedzenia"
+                  description="Zapewnię łatwą nawigację, szybkie ładowanie, aby zachęcić użytkowników do ponownego odwiedzenia strony"
                 />
                 <ValueCard
                   icon={<Icons.handshake size={icon_size} />}
@@ -180,7 +207,6 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-3">
-              <Button variant="default">zarezerwuj rozmowę</Button>
               <Button variant="subtle" href="portfolio">
                 portfolio
               </Button>
@@ -203,7 +229,6 @@ export default function Home() {
               {PortfolioCards}
             </div>
             <div className="flex justify-center gap-3 mt-10">
-              <Button variant="default">zarezerwuj rozmowę</Button>
               <Button variant="subtle" href="process">
                 przebieg procesu
               </Button>
@@ -230,7 +255,7 @@ export default function Home() {
                 />
                 <ProcesCard
                   title="Tworzenie szkiców"
-                  description="Tworzenie szkiców to sposób na zaplanowanie najlpeszej struktury i układu Twojej strony."
+                  description="Tworzenie szkiców to sposób na zaplanowanie najlepszej struktury i układu Twojej strony."
                   pill="2-5"
                 />
                 <ProcesCard
@@ -253,12 +278,6 @@ export default function Home() {
           </section>
         </Container>
 
-        {/* <Container>
-          <section>
-            <LastChanceCard />
-          </section>
-        </Container> */}
-
         <Container>
           <section
             className="flex flex-col items-center justify-center gap-10"
@@ -277,6 +296,6 @@ export default function Home() {
           </Container>
         </section>
       </div>
-    </>
+    </div>
   );
 }

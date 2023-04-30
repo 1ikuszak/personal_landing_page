@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/Form.jsx"
+    "components/Form.jsx",
+    "components/CalendlyButton.tsx"
   ],
   "exclude": ["node_modules"]
 }
