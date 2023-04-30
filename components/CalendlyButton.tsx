@@ -1,6 +1,7 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 import { PopupButton } from 'react-calendly';
-import { Button } from './ui/Button';
+import { buttonVariants } from './ui/Button';
 
 interface CalendlyButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,16 +14,19 @@ const CalendlyButton = React.forwardRef<HTMLButtonElement, CalendlyButtonProps>(
 
     const rootElement = document.getElementById('root') ?? document.body;
 
+    const calendlyButtonClassNames = cn(
+      buttonVariants({ variant: 'default', size: 'default', className })
+    );
+
     return (
       <>
-        <Button>
-          <PopupButton
-            text={children as string}
-            url="https://calendly.com/fireflydesign/30min"
-            rootElement={rootElement}
-            {...rest}
-          />
-        </Button>
+        <PopupButton
+          className={calendlyButtonClassNames}
+          text={children as string}
+          url="https://calendly.com/fireflydesign/30min"
+          rootElement={rootElement}
+          {...rest}
+        />
       </>
     );
   }
