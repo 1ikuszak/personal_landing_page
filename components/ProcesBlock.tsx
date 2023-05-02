@@ -1,6 +1,6 @@
 'use client';
+import CalendlyButton from './CalendlyButton';
 import { Icons } from './Icons';
-import { Button } from './ui/Button';
 
 const ProcesBlock = ({}) => {
   return (
@@ -27,7 +27,7 @@ const ProcesBlock = ({}) => {
         </p>
       </div>
       <div className="w-full text-right">
-        <Button>zarezerwuj darmową rozmowę</Button>
+        <CalendlyButton>zarezerwuj darmową rozmowę</CalendlyButton>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
 import * as React from 'react';
+import 'react-scroll';
 import { Link } from 'react-scroll';
 import { Icons } from '../Icons';
 
@@ -59,13 +60,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const buttonClassNames = cn(buttonVariants({ variant, size, className }));
 
-    if (href) {
-      return (
-        <Link to={href} className={buttonClassNames}>
-          {children}
-        </Link>
-      );
-    }
+    // if (href) {
+    //   return (
+    //     <Link to={href} className={buttonClassNames}>
+    //       {children}
+    //     </Link>
+    //   );
+    // }
 
     return (
       <button className={buttonClassNames} ref={ref} {...rest}>

@@ -52,7 +52,10 @@ const Footer = ({ items }: MainNavProps) => {
         </div>
       </div>
       <hr className="rounded-full opacity-30 " />
-      <p className="text-center">©Copyright FireflyDesign</p>
+      <div className="flex justify-center gap-3">
+        <a href="/politykaprywatnosci">Polityka Prywatności</a>
+        <p className="text-center">©Copyright FireflyDesign</p>
+      </div>
     </footer>
   );
 };

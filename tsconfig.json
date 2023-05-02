@@ -29,7 +29,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/Form.jsx",
-    "components/CalendlyButton.tsx"
+    "components/CalendlyButton.tsx",
+    "app/(marketing)/page.jsx",
+    "app/politykaprywatnosci/layout.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import { marketingConfig } from '@/config/marketing';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import { Inter as FontSans } from 'next/font/google';
@@ -22,12 +20,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={cn('font-sans text-slate-900 antialiased', fontSans.variable)}
-      style={{ scrollBehavior: 'smooth' }}
+      suppressHydrationWarning
+      className={cn('min-h-screen font-sans antialiased', fontSans.variable)}
     >
       <head />
-      <body className="min-h-screen" id="hero">
-        <Navbar items={marketingConfig.mainNav} />
+      <body>
         <main>{children}</main>
       </body>
     </html>

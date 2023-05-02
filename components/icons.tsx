@@ -1,5 +1,6 @@
 import {
   ChevronDown,
+  ChevronLeft,
   ClipboardType,
   Clock4,
   Coins,
@@ -43,6 +44,7 @@ export const Icons = {
   handshake: HeartHandshake,
   webhook: Webhook,
   downarrow: ChevronDown,
+  leftarrow: ChevronLeft,
   loader: Loader,
   loader2: Loader2,
 };

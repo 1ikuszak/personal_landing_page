@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { PopupButton } from 'react-calendly';
 import { buttonVariants } from './ui/Button';
 
@@ -11,8 +11,14 @@ interface CalendlyButtonProps
 const CalendlyButton = React.forwardRef<HTMLButtonElement, CalendlyButtonProps>(
   (props, ref) => {
     const { className, children, href, ...rest } = props;
+    const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+    const calendlyButtonRef = useRef<HTMLButtonElement>(null);
 
-    const rootElement = document.getElementById('root') ?? document.body;
+    useEffect(() => {
+      if (calendlyButtonRef.current) {
+        setRootElement(document.getElementById('root') ?? document.body);
+      }
+    }, []);
 
     const calendlyButtonClassNames = cn(
       buttonVariants({ variant: 'default', size: 'default', className })
@@ -20,13 +26,16 @@ const CalendlyButton = React.forwardRef<HTMLButtonElement, CalendlyButtonProps>(
 
     return (
       <>
-        <PopupButton
-          className={calendlyButtonClassNames}
-          text={children as string}
-          url="https://calendly.com/fireflydesign/30min"
-          rootElement={rootElement}
-          {...rest}
-        />
+        <button ref={calendlyButtonRef} style={{ display: 'none' }} />
+        {rootElement && (
+          <PopupButton
+            className={calendlyButtonClassNames}
+            text={children as string}
+            url="https://calendly.com/fireflydesign/30min"
+            rootElement={rootElement}
+            {...rest}
+          />
+        )}
       </>
     );
   }

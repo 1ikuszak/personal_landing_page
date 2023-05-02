@@ -5,12 +5,11 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 
+import Container from '@/components/Container';
 import { Icons } from '@/components/Icons';
 import { MobileNav } from '@/components/mobile-nav';
 import { cn } from '@/lib/utils';
 import { MainNavItem } from '@/types';
-
-import Container from './Container';
 
 interface MainNavProps {
   items?: MainNavItem[];

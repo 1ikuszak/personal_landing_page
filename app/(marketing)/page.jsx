@@ -1,6 +1,5 @@
 'use client';
 
-import { marketingConfig } from '@/config/marketing';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
@@ -9,25 +8,21 @@ import CalendlyButton from '@/components/CalendlyButton';
 import Card from '@/components/Card';
 import Container from '@/components/Container';
 import ContactUs from '@/components/Form';
-import Footer from '@/components/Fotter';
 import { Icons } from '@/components/Icons';
 import PortfolioCard from '@/components/PortfolioCard';
+import ProcesBlock from '@/components/ProcesBlock';
 import ProcesCard from '@/components/ProcesCard';
 import ValueCard from '@/components/ValueCard';
 import { Layout } from '@/components/dom/Layout';
 import { Button } from '@/components/ui/Button';
-import ProcesBlock from '../components/ProcesBlock';
 
 //images
 import crypto_hero from '@/public/crypto_hero.jpg';
 import crypto_perks from '@/public/crypto_perks.jpg';
-import engines_main from '@/public/engines_main.jpg';
 import fiver_browse from '@/public/fiver_browse.jpg';
 import fiver_login from '@/public/fiver_login.png';
-import fiver_register from '@/public/fiver_register.png';
 import outlanders_hero from '@/public/outlanders_hero.jpg';
 import rock_paper_scissors from '@/public/rock_paper_scissors.jpg';
-import snow_fox from '@/public/snow_fox.png';
 
 // 3d
 const Blob = dynamic(
@@ -65,11 +60,11 @@ export default function Home() {
     outlanders_hero,
     fiver_browse,
     fiver_login,
-    fiver_register,
+    // fiver_register,
     crypto_hero,
     crypto_perks,
-    engines_main,
-    snow_fox,
+    // engines_main,
+    // snow_fox,
   ];
   for (let index = 0; index < PortfolioImages.length; index++) {
     PortfolioCards.push(
@@ -88,7 +83,7 @@ export default function Home() {
     >
       <Container>
         <div className="flex flex-col flex-wrap items-center justify-center w-full mx-auto md:flex-row">
-          <div className="mix-blend-luminosity z-10 flex flex-col lg:gap-6 gap-8 gap-6 items-start justify-center w-full text-center md:w-[50%] md:text-left">
+          <div className="mix-blend-luminosity z-10 flex flex-col gap-6 items-start justify-center w-full text-center md:w-[50%] md:text-left">
             <p className="text-6xl font-semibold text-left md:text-6xl">
               Strony, które opowiadają historię i przynoszą
               <span className="text-blue-500"> rezultaty</span>
@@ -289,12 +284,6 @@ export default function Home() {
           <ContactUs />
         </section>
       </Container>
-
-      <section className="w-full bg-dark" id="footer">
-        <Container>
-          <Footer items={marketingConfig.mainNav} />
-        </Container>
-      </section>
     </div>
   );
 }
