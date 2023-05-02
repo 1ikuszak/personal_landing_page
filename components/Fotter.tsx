@@ -5,7 +5,7 @@ import { MainNavItem } from '@/types';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import * as React from 'react';
 import { Link } from 'react-scroll';
-import { Icons } from './Icons';
+import { Icons } from './icons';
 
 interface MainNavProps {
   items?: MainNavItem[];

@@ -8,12 +8,12 @@ import CalendlyButton from '@/components/CalendlyButton';
 import Card from '@/components/Card';
 import Container from '@/components/Container';
 import ContactUs from '@/components/Form';
-import { Icons } from '@/components/Icons';
 import PortfolioCard from '@/components/PortfolioCard';
 import ProcesBlock from '@/components/ProcesBlock';
 import ProcesCard from '@/components/ProcesCard';
 import ValueCard from '@/components/ValueCard';
 import { Layout } from '@/components/dom/Layout';
+import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/Button';
 
 //images

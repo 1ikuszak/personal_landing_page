@@ -1,6 +1,6 @@
 'use client';
 import CalendlyButton from './CalendlyButton';
-import { Icons } from './Icons';
+import { Icons } from './icons';
 
 const ProcesBlock = ({}) => {
   return (

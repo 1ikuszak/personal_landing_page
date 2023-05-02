@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Icons } from './Icons';
+import { Icons } from './icons';
 import { Button } from './ui/Button';
 
 export const ContactUs = () => {
