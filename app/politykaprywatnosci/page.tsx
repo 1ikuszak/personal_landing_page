@@ -1,5 +1,4 @@
 import Container from '@/components/Container';
-import { Icons } from '@/components/Icons';
 import Link from 'next/link';
 
 export default function PrivacyPolicy() {
@@ -7,8 +6,7 @@ export default function PrivacyPolicy() {
     <Container>
       <div className="flex flex-col w-2/3 gap-10 mt-12">
         <Link href="/">
-          <button className="inline-flex items-center justify-center gap-1 py-2 pl-1 pr-3 text-sm font-medium transition-colors rounded-md bg-dark text-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-slate-700 disabled:opacity-50 disabled:pointer-events-none ring-offset-background">
-            <Icons.leftarrow />
+          <button className="inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md bg-dark text-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-slate-700 disabled:opacity-50 disabled:pointer-events-none ring-offset-background">
             Powrót
           </button>
         </Link>
