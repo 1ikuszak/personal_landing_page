@@ -5,7 +5,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
 
-import Container from '@/components/Container';
+import Container from '@/components/container';
 import { Icons } from '@/components/icons';
 import { MobileNav } from '@/components/mobile-nav';
 import { cn } from '@/lib/utils';

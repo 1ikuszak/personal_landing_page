@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Icons } from './icons';
-import { Button } from './ui/Button';
+import { Button } from './ui/button';
 
 export const ContactUs = () => {
   const [loading, setLoading] = useState(false);

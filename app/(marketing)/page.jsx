@@ -4,17 +4,17 @@ import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
 // components
-import CalendlyButton from '@/components/CalendlyButton';
-import Card from '@/components/Card';
-import Container from '@/components/Container';
-import ContactUs from '@/components/Form';
-import PortfolioCard from '@/components/PortfolioCard';
-import ProcesBlock from '@/components/ProcesBlock';
-import ProcesCard from '@/components/ProcesCard';
-import ValueCard from '@/components/ValueCard';
+import CalendlyButton from '@/components/calendlyButton';
+import Card from '@/components/card';
+import Container from '@/components/container';
 import { Layout } from '@/components/dom/Layout';
+import ContactUs from '@/components/form';
 import { Icons } from '@/components/icons';
-import { Button } from '@/components/ui/Button';
+import PortfolioCard from '@/components/portfolioCard';
+import ProcesBlock from '@/components/procesBlock';
+import ProcesCard from '@/components/procesCard';
+import { Button } from '@/components/ui/button';
+import ValueCard from '@/components/valueCard';
 
 //images
 import crypto_hero from '@/public/crypto_hero.jpg';

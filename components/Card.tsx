@@ -27,7 +27,7 @@ const Card: FC<CardProps> = ({
         >
           {image}
         </div>
-        <div className="flex flex-col gap-6 px-4 pt-4 pb-8 border border-dark rounded-md">
+        <div className="flex flex-col gap-6 px-4 pt-4 pb-8 border rounded-md border-dark">
           <div>
             <p className="text-4xl font-semibold">{title}</p>
           </div>

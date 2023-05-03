@@ -1,4 +1,4 @@
-import Container from '@/components/Container';
+import Container from '@/components/container';
 import { Icons } from '@/components/icons';
 import Link from 'next/link';
 

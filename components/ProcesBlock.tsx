@@ -1,8 +1,8 @@
 'use client';
-import CalendlyButton from './CalendlyButton';
+import CalendlyButton from './calendlyButton';
 import { Icons } from './icons';
 
-const ProcesBlock = ({}) => {
+const ProcesBlock = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-center gap-6">

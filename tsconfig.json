@@ -28,8 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/Form.jsx",
-    "components/CalendlyButton.tsx",
+    "components/form.jsx",
+    "components/calendlyButton.tsx",
     "app/(marketing)/page.jsx",
     "app/politykaprywatnosci/layout.jsx"
   ],

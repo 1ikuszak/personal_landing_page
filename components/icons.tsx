@@ -48,5 +48,3 @@ export const Icons = {
   loader: Loader,
   loader2: Loader2,
 };
-
-export type Icons = keyof typeof Icons;

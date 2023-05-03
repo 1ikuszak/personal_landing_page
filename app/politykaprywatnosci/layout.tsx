@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import Footer from '@/components/Fotter';
+import Container from '@/components/container';
+import Footer from '@/components/fotter';
 import '@/styles/globals.css';
 
 type RootLayoutProps = {
