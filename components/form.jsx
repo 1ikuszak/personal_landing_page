@@ -15,10 +15,10 @@ export const ContactUs = () => {
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        'firefly_service',
+        'firefly_template',
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        'xFgjOXwGa36tQp4xD'
       )
       .then(
         (result) => {
