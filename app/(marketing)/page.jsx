@@ -93,10 +93,8 @@ export default function Home() {
               atrakcyjnie, ale przede wszystkim są skutecznymi narzędziami
               biznesowymi, zwiększającymi sprzedaż i lojalność klientów.
             </p>
-            <div className="flex gap-3">
-              <CalendlyButton variant="default" size="no_padding">
-                zarezerwuj darmową rozmowę
-              </CalendlyButton>
+            <div className="flex flex-col w-full gap-2 lg:gap-3 sm:flex-row">
+              <CalendlyButton>zarezerwuj darmową rozmowę</CalendlyButton>
               <Button variant="subtle" href="firefly">
                 dowiedz się więcej
               </Button>
@@ -140,7 +138,7 @@ export default function Home() {
                   Twojego biznesu.
                 </p>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col gap-2 lg:gap-3 lg:flex-row">
                 <CalendlyButton>zarezerwuj termin</CalendlyButton>
                 <Button variant="subtle" href="values">
                   jak mogę ci pomóc
@@ -201,11 +199,9 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex gap-3">
-            <Button variant="subtle" href="portfolio">
-              portfolio
-            </Button>
-          </div>
+          <Button variant="subtle" href="portfolio">
+            portfolio
+          </Button>
         </section>
       </Container>
 

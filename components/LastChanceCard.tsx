@@ -2,7 +2,7 @@ import { Button } from './ui/Button';
 
 const LastChanceCard = () => {
   return (
-    <div className="flex justify-center p-4 border border-dark rounded-lg lg:p-12 itmes-center">
+    <div className="flex justify-center p-4 border rounded-lg border-dark lg:p-12 itmes-center">
       <div className="hidden lg:flex w-[3px] my-2 bg-dark rounded-full"></div>
       <div className="flex flex-col items-center justify-center gap-6">
         <div className="flex flex-col gap-1 mx-10 text-center">
