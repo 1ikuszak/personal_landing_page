@@ -13,7 +13,7 @@ const ValueCard: FC<ValueCardProps> = ({ title, description, icon }) => {
     <>
       <div className="flex flex-1 text-light max-h-[180px] min-h-[180px] bg-dark rounded-lg">
         <div className="p-1 lg:p-2">{icon}</div>
-        <div className="flex flex-col items-start justify-center gap-2 px-2 py-1 bg-dark lg:p-6">
+        <div className="flex flex-col items-start justify-center gap-2 px-2 py-1 lg:p-6">
           <p className="text-xl font-semibold text-left lg:text-2xl">{title}</p>
           <p>{description}</p>
         </div>
