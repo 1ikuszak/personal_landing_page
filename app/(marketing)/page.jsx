@@ -116,12 +116,19 @@ export default function Home() {
       {/* jumbo */}
 
       <section
-        className="flex items-center justify-center h-auto py-12 bg-dark"
+        className="flex items-center justify-center h-auto py-6 bg-dark"
         id="firefly"
+        style={{
+          background: '#1E1E1E',
+          opacity: 1,
+          backgroundImage:
+            'linear-gradient(#3b82f6 2px, transparent 2px), linear-gradient(to right, #3b82f6 2px, #1E1E1E 2px)',
+          backgroundSize: '32px 32px',
+        }}
       >
         <Container>
-          <div className="flex flex-col lg:flex-row py-12 flex gap-[80px] items-center">
-            <div className="flex flex-col order-last gap-12 lg:order-first">
+          <div className="flex flex-col lg:flex-row justify-center py-12 flex gap-[60px] items-center">
+            <div className="flex flex-col order-last gap-12 p-4 rounded-xl bg-dark lg:order-first">
               <div className="text-light">
                 <p className="mb-1 text-3xl font-bold">Satysfakcja klienta</p>
                 <p className="text-lg leading-tight ">
