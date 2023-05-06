@@ -3,8 +3,8 @@ import { MarketingConfig } from '@/types';
 export const marketingConfig: MarketingConfig = {
   mainNav: [
     {
-      title: 'Firefly',
-      href: 'firefly',
+      title: 'Cvrfly',
+      href: 'cvrfly',
     },
     {
       title: 'Jak mogę pomóc',

@@ -33,7 +33,7 @@ function CalendlyButton(
         <PopupButton
           className={calendlyButtonClassNames}
           text={children as string}
-          url="https://calendly.com/fireflydesign/30min"
+          url="https://calendly.com/cvrfly/30min"
           rootElement={rootElement}
           {...rest}
         />

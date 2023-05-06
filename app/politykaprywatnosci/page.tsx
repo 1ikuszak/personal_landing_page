@@ -18,8 +18,8 @@ export default function PrivacyPolicy() {
             1. Administrator danych osobowych
           </p>
           <p>
-            Administratorem danych osobowych jest firefly, z siedzibą w Polsce.
-            Dane kontaktowe administratora to: hello.fireflydesign@gmail.com
+            Administratorem danych osobowych jest CvrFly, z siedzibą w Polsce.
+            Dane kontaktowe administratora to: hello.cvrfly@gmail.com
           </p>
         </div>
         <div>

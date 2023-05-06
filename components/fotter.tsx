@@ -26,7 +26,7 @@ const Footer = ({ items }: MainNavProps) => {
           className="flex items-center justify-center gap-2 cursor-pointer"
         >
           <Icons.logo />
-          <p className="text-2xl">FireflyDesign</p>
+          <p className="text-2xl">CvrFly</p>
         </Link>
         <div className="hidden gap-2 lg:flex">
           {items?.length ? (
@@ -54,7 +54,7 @@ const Footer = ({ items }: MainNavProps) => {
       <hr className="rounded-full opacity-30 " />
       <div className="flex justify-center gap-3">
         <a href="/politykaprywatnosci">Polityka Prywatności</a>
-        <p className="text-center">©Copyright FireflyDesign</p>
+        <p className="text-center">©Copyright CvrFly</p>
       </div>
     </footer>
   );

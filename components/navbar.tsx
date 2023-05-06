@@ -36,8 +36,8 @@ const Navbar = ({ items, children }: MainNavProps) => {
         >
           <Icons.logo />
           <p className="text-2xl font-bold text-neutral-900">
-            <span>Firefly</span>
-            <span className="text-blue-500">Design</span>
+            <span>Cvr</span>
+            <span className="text-blue-500">Fly</span>
           </p>
         </Link>
         <button

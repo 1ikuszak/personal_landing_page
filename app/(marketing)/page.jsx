@@ -95,7 +95,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col w-full gap-2 lg:gap-3 sm:flex-row">
               <CalendlyButton>zarezerwuj darmową rozmowę</CalendlyButton>
-              <Button variant="subtle" href="firefly">
+              <Button variant="subtle" href="cvrfly">
                 dowiedz się więcej
               </Button>
             </div>
@@ -117,7 +117,7 @@ export default function Home() {
 
       <section
         className="flex items-center justify-center h-auto py-6 bg-dark"
-        id="firefly"
+        id="cvrfly"
         style={{
           background: '#1E1E1E',
           opacity: 1,
