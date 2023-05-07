@@ -158,7 +158,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center order-first gap-12 lg:order-last lg:flex-row">
               <Card
                 title="Design"
-                description="skupiamy się nie tylko na wyglądzie strony, ale również na tym, jak działa oraz jak zdobyć zaufanie klientów"
+                description="skupiam się nie tylko na wyglądzie strony, ale również na tym, jak zmienić ruchu na stronie w celowe zachowania"
                 bar1="KREATYWNOŚĆ"
                 bar2="FUNKCJONALNOŚĆ"
                 color="bg-light"
