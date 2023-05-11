@@ -29,13 +29,13 @@ const Navbar = ({ items, children }: MainNavProps) => {
       <div className="flex py-2 md:justify-between">
         <Link
           to="hero"
-          className="flex items-center justify-center w-full space-x-2 cursor-pointer md:w-auto md:justify-start"
+          className="flex items-center justify-start w-full space-x-2 cursor-pointer md:w-auto"
           spy={true}
           smooth={true}
           duration={500}
         >
-          <Icons.logo />
-          <p className="text-2xl font-bold text-neutral-900">
+          <Icons.logo size={32} />
+          <p className="text-3xl font-bold lg:text-2xl text-neutral-900">
             <span>Cvr</span>
             <span className="text-blue-500">Fly</span>
           </p>
@@ -44,7 +44,11 @@ const Navbar = ({ items, children }: MainNavProps) => {
           className="flex items-center space-x-2 l-0 md:hidden"
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
-          {showMobileMenu ? <Icons.close /> : <Icons.menu />}
+          {showMobileMenu ? (
+            <Icons.close size={28} />
+          ) : (
+            <Icons.menu size={28} />
+          )}
         </button>
         {showMobileMenu && items && (
           <MobileNav
